@@ -31,6 +31,8 @@ export class BoardComponent implements OnInit {
 
   // make move at board index
   makeMove(idx: number) {
+    // if winner, return
+    if (this.winner) return;
     // if empty square
     if (!this.squares[idx]) {
       this.squares.splice(idx, 1, this.player); // set square to player
